@@ -1,0 +1,23 @@
+$colors: (
+    black: #0f1014,
+    cyan: #54E9E6,
+    white: darken(#fff, 5%),
+    blue: #617FF7,
+    darkcyan: #00323C
+);
+
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Didn't find `#{$key}` in $colors.";
+  @return null;
+}
+
+$navbar-height: 3rem;
+
+$mobile-max-width: 900px;
+$mobile-max-height: 500px;
+
+$level-size: 260px;

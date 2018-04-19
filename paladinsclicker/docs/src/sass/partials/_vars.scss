@@ -1,0 +1,62 @@
+$main-font: 'Lato', sans-serif;
+$light-blue-color: #54E9E6;
+$dark-cyan-color: #128D8A;
+$background-placeholder-color: #617FF7;
+
+$navbar-height: 45px;
+$navbar-element-padding: 3px;
+$navbar-element-font-size: 25px;
+$navbar-background-color: #0f1014;
+
+$mobile-max-width: 900px;
+$mobile-max-height: 500px;
+$mobile-leftbar-height: 400px;
+$mobile-midbar-height: 580px;
+$mobile-rightbar-min-height: 300px;
+$mobile-bar-border: 3px solid $navbar-background-color;
+
+$leftbar-width: 30%;
+$midbar-width: 30%;
+$rightbar-width: 40%;
+$bar-background-color: rgba(14, 15, 22, 0.8);
+$bar-border: 4px solid $navbar-background-color;
+
+$champion-wrapper-size: 250px;
+$champion-wrapper-background-color: rgb(73, 150, 164);
+$champion-wrapper-border: 3px solid rgb(0, 50, 60);
+$champion-icon-size: 230px;
+$champion-icon-transition-duration: 0.1s;
+
+$champion-width: 274px;
+$champion-font-size: 15px;
+$health-wrapper-gradient: 80deg, transparent, transparent 5px, $light-blue-color 5px, $light-blue-color 30px;
+$health-wrapper-height: 25px;
+$health-progress-color: rgb(0, 50, 60);
+$health-progress-gradient: 80deg, transparent, transparent 5px, $health-progress-color 5px, $health-progress-color 30px;
+$champion-triangle-size: 10px;
+
+$level-size: 260px;
+$level-top: 20px;
+$level-font-size: 70px;
+
+$item-size: 90px;
+
+$stats-width: 300px;
+
+$stats-color-yellow: #DEAC3D;
+$stats-color-orange: #FF6600;
+$stats-color-red: #F64937;
+
+$button-border: 2px solid #063938;
+$button-transition-duration: 0.5s;
+$button-hover-color: #10c2bd;
+
+$button-decline-color: #bd0a0a;
+$button-decline-border-color: #5c0606;
+$button-decline-hover-color: #e21b1b;
+
+$spinner-size: 200px;
+$loader-secondary-color: #111;
+
+$floating-num-size: 30px;
+$floating-num-scale: 5;

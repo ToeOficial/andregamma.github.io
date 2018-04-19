@@ -1,0 +1,445 @@
+@charset "UTF-8";
+/*
+Paladins​™ and Paladins™: Champions of the Realm​​™ are trademarks of Hi­Rez Studios, Inc. in the United States and other countries.
+*/
+
+@import 'partials/vars';
+@import 'partials/media';
+@import 'partials/anims';
+
+* {
+    font-family: $main-font;
+    user-select: none;
+}
+
+body {
+    background-color: $background-placeholder-color;
+    background-image: url('../img/background.png');
+    background-size: cover;
+    background-clip: border-box;
+    background-position: 0px $navbar-height;
+    background-repeat: repeat-y;
+    overflow: hidden;
+    color: white;
+}
+
+.tooltip {
+    z-index: 2 !important;
+    cursor: help !important;
+}
+.tooltipster {
+    cursor: help !important;
+}
+
+.pc-navbar {
+    background-color: $navbar-background-color;
+    color: $light-blue-color;
+    height: $navbar-height;
+    line-height: $navbar-height;
+    vertical-align: middle;
+    .pc-logo {
+        font-weight: bold;
+        float: left !important;
+        color: $light-blue-color !important;
+        .pc-logo-img {
+            margin-bottom: 5px;
+        }
+    }
+    .pc-navbar-element {
+        display: inline-block;
+        padding-right: $navbar-element-padding; padding-left: $navbar-element-padding;
+        height: $navbar-height;
+        vertical-align: middle;
+        float: right;
+        font-size: $navbar-element-font-size;
+        cursor: pointer;
+        min-width: $navbar-height - 5px;
+        text-align: center;
+        color: white;
+        transition-duration: 2s;
+        &:not(.pc-logo):hover {
+            background-color: #242732 !important;
+            color: $light-blue-color !important;
+        }
+    }
+}
+
+.pc-bar {
+    display: inline-block;
+    float: left;
+    height: calc(100vh - #{$navbar-height});
+    overflow: hidden;
+    position: relative;
+}
+
+.pc-leftbar {
+    width: $leftbar-width;
+}
+
+.pc-midbar {
+    width: $midbar-width;
+    background-color: $bar-background-color;
+    border-left: $bar-border;
+}
+
+.pc-rightbar {
+    background-color: $bar-background-color;
+    border-left: $bar-border;
+    width: $rightbar-width;
+}
+
+//NOTE: DON'T NEST THIS PART OR JQUERY EXPLODE WILL BUG OUT
+.champion-wrapper {
+    width: $champion-wrapper-size;
+    height: $champion-wrapper-size;
+    border-radius: 50% !important;
+    position: absolute;
+    left: calc(50% - #{$champion-wrapper-size/2});
+    top: calc(50% - 80px);
+    background-color: $champion-wrapper-background-color;
+    border: $champion-wrapper-border;
+    cursor: crosshair !important;
+}
+.champion-icon {
+    border-radius: 50% !important;
+    position: absolute;
+    left: calc(50% - #{$champion-icon-size/2});
+    top: calc(50% - #{$champion-icon-size/2});
+    transition-duration: $champion-icon-transition-duration;
+    opacity: 1;
+    height: $champion-icon-size;
+    width: $champion-icon-size;
+    cursor: crosshair !important;
+    &:hover {
+        top: calc(50% - #{($champion-icon-size/2)+2});
+        opacity: 1;
+    }
+    &:active {
+        top: calc(50% - #{($champion-icon-size/2)-2});
+        opacity: 0.9;
+    }
+}
+
+
+.health-wrapper {
+    background: $dark-cyan-color;
+    background: repeating-linear-gradient($health-wrapper-gradient);
+    left: calc(50% - #{$champion-width/2});
+    top: calc(50% - #{($champion-width/2)-12});
+    height: $health-wrapper-height;
+    position: absolute;
+    width: $champion-width;
+    //Flip health wrapper
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+    .health-progress {
+        background: $health-progress-color;
+        background: repeating-linear-gradient($health-progress-gradient);
+        height: $health-wrapper-height;
+        position: absolute;
+        width: 0px;
+    }
+}
+
+.champion-name {
+    left: calc(50% - #{$champion-width/2});
+    width: $champion-width;
+    top: calc(50% - #{($champion-width/2)+13});
+    position: absolute;
+
+    text-align: center;
+    color: $light-blue-color;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px black;
+    font-size: $champion-font-size;
+}
+.champion-triangle {
+    left: calc(50% - #{$champion-triangle-size});
+    top: calc(50% - 95px);
+    position: absolute;
+
+    width: 0;
+    height: 0;
+    border-left: $champion-triangle-size solid transparent;
+    border-right: $champion-triangle-size solid transparent;
+
+    border-top: $champion-triangle-size solid $light-blue-color;
+}
+.level-canvas {
+    position: absolute;
+    left: calc(50% - #{$level-size/2});
+    top: $level-top;
+}
+.level-text {
+    position: absolute;
+    left: calc(50% - #{$level-size/2});
+    width: $level-size;
+    height: $level-size;
+    top: $level-top;
+    border-radius: 50%;
+
+    text-align: center;
+    line-height: $level-size;
+    color: white;
+    font-weight: bold;
+    font-size: $level-font-size;
+
+    text-shadow: 2px 2px 30px $dark-cyan-color, -2px -2px 30px $dark-cyan-color;
+}
+.pc-stats {
+    position: absolute;
+    left: calc(50% - #{$stats-width/2});
+    width: $stats-width;
+    height: 240px;
+    border-radius: 20px;
+    padding: 10px;
+    top: $level-size + 2*$level-top;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    line-height: 32px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid transparentize($dark-cyan-color, 0.5);
+    img {
+        margin-bottom: 5px;
+    }
+    .gpk, .dps {
+        font-size: 20px;
+        line-height: 20px;
+        display: block;
+        margin-top: -5px;
+    }
+    .stats-section {
+        padding-top: 12.5%;
+        padding-bottom: 12.5%;
+        height: 50%;
+    }
+}
+
+.stats-yellow {
+    color: $stats-color-yellow;
+}
+.stats-orange {
+    color: $stats-color-orange;
+}
+.stats-red {
+    color: $stats-color-red;
+}
+
+
+.pc-item {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid transparentize($dark-cyan-color, 0.5);
+    border-radius: 10px;
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px;
+    height: 115px;
+    position: relative;
+    .pc-item-image {
+        border: 2px solid transparentize($dark-cyan-color, 0.5);
+        border-radius: 10px;
+        height: $item-size; width: $item-size;
+    }
+    .pc-item-stats {
+        position: absolute;
+        left: 110px;
+        right: 0;
+        top: 40px;
+        bottom: 10px;
+        font-size: 15px;
+        line-height: 30px;
+    }
+    .pc-item-title {
+        position: absolute;
+        left: 110px;
+        right: 0;
+        top: 10px;
+        height: 26px;
+        border-bottom: 1px solid white;
+
+        font-size: 24px;
+        line-height: 26px;
+        font-weight: bold;
+        color: white;
+    }
+    .pc-item-level::before {
+        content: "Level: ";
+    }
+    .pc-item-cost::before {
+        content: "Cost: ";
+    }
+    .pc-item-section {
+        width: 50%;
+        display: inline-block;
+        height: 100%;
+        vertical-align: middle;
+        &.pc-item-section2 {
+            text-align: center;
+        }
+    }
+    .pc-item-button {
+        background-color: $dark-cyan-color;
+        border: $button-border;
+        outline: none;
+        border-radius: 5px;
+        transition-duration: $button-transition-duration;
+        &.pc-item-button-disabled, &.pc-item-button-expensive {
+            background-color: $button-decline-color !important;
+            border-color: $button-decline-border-color !important;
+            cursor: not-allowed;
+        }
+        &:hover {
+            background-color: $button-hover-color;
+        }
+    }
+    .pc-item-cost img {
+        margin-bottom: 2px;
+        margin-left: 2px;
+    }
+    .pc-item-bonus-dmg::after {
+        content: ' DMG';
+        color: $stats-color-orange;
+    }
+    .pc-item-bonus-dps::after {
+        content: ' DPS';
+        color: $button-decline-color;
+    }
+    .pc-item-bonus-gpk::after {
+        content: ' GPK';
+        color: $stats-color-yellow;
+    }
+    .pc-item-bonus-xppk::after {
+        content: ' XPPK';
+        color: $light-blue-color;
+    }
+    .abilityLetter {
+        color: $background-placeholder-color;
+    }
+    .abilityCooldownDiv {
+        height: $item-size; width: $item-size;
+        position: absolute; bottom: 10px;
+        border-radius: 10px;
+        background-color: transparent;
+        cursor: pointer;
+    }
+}
+
+.pc-modal * {
+    background-color: $navbar-background-color;
+    color: white;
+    border-color: $light-blue-color;
+}
+.pc-modal .modal-content {
+    border-color: black;
+}
+.pc-modal .pc-modal-button {
+    background-color: $dark-cyan-color;
+    border: $button-border;
+    outline: none;
+    border-radius: 5px;
+    transition-duration: $button-transition-duration;
+}
+.pc-modal .pc-modal-button:hover {
+    background-color: $button-hover-color;
+}
+.pc-button-decline {
+    background-color: $button-decline-color !important;
+    border-color: $button-decline-border-color !important;
+}
+.pc-button-decline:hover {
+    background-color: $button-decline-hover-color !important;
+}
+a {
+    color: $light-blue-color !important;
+}
+//hide as much as possible
+.preload {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    left: -9999px;
+    top: -9999px;
+}
+
+#settingsModal {
+    vertical-align: middle;
+    input {
+        cursor: pointer;
+    }
+    label {
+        font-weight: normal;
+    }
+    .full-width {
+        width: 100%;
+    }
+    input[type="checkbox"] {
+        position: absolute;
+    }
+    label[for="easterEggsInput"], label[for="isMobileInput"] {
+        margin-left: 20px;
+    }
+    #explosionPiecesDisplay, #explosionPiecesInput {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    #explosionPiecesInput {
+        width: 70%;
+    }
+    #explosionPiecesDisplay {
+        margin-left: 5%;
+        width: 25%;
+        border: 2px solid $light-blue-color;
+        text-align: center;
+        cursor: no-drop;
+    }
+    label[for="deleteLocalStorage"], label[for="saveLocalStorage"] {
+        margin-right: 10px;
+    }
+}
+.modal-open .modal {
+    overflow-x: hidden;
+    overflow-y: scroll !important;
+}
+.dmgFloatingNum {
+    pointer-events: none;
+    color: $stats-color-red;
+    font-size: $floating-num-size; font-weight: bold;
+    height: $floating-num-size; line-height: $floating-num-size;
+    width: $floating-num-size*4; text-align: center;
+    position: absolute; left: calc(50% - #{$floating-num-size*2}); top: calc(50% - 80px);
+    z-index: 50;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    &.dmgFloat1 {
+        animation-name: floatingNumLeft;
+    }
+    &.dmgFloat2 {
+        animation-name: floatingNumCenter;
+    }
+    &.dmgFloat3 {
+        animation-name: floatingNumRight;
+    }
+}
+.noticeWrapper {
+    //TODO: notice styles
+    //position: absolute;
+    display: none;
+    .notice {
+
+    }
+}
+#debugPre {
+    background-color: black;
+    color: white;
+    user-select: auto;
+    font-family: monospace;
+    max-height: 70vh;
+    overflow-y: scroll;
+}

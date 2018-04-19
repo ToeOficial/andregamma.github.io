@@ -1,0 +1,261 @@
+<!--
+Paladins​™ and Paladins™: Champions of the Realm​​™ are trademarks of Hi­Rez Studios, Inc. in the United States and other countries.
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Clicker game based on Paladins.">
+        <!--<meta name="keywords" content="Paladins,Game,Paladins Clicker,Clicker">-->
+        <meta name="author" content="Tomasz Chojnacki">
+        <meta name="revised" content="tchojnacki, 27/06/2017" />
+
+        <meta name="google" content="notranslate" />
+        <meta name="google" content="nositelinkssearchbox" />
+
+        <link rel="stylesheet" href="./css/loading.css">
+        <title>Paladins Clicker</title>
+
+        <link rel="icon" type="image/png" sizes="96x96" href="./img/favicons/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
+
+        <link rel="stylesheet" href="./css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/bootstrap-theme.min.css">
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" href="./css/tooltipster.bundle.min.css">
+        <link rel="stylesheet" href="./css/tooltipster-sideTip-punk.min.css">
+        <link rel="stylesheet" href="./css/tooltipster-theme.css">
+        <link rel="stylesheet" href="./css/customscrollbar.min.css">
+        <link rel="stylesheet" href="./css/jquery-ui.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700">
+        <link rel="stylesheet" href="./css/font-awesome.min.css">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div class="noticeWrapper"></div>
+        <div class="loadingOverlay">
+            <div class="spinningCircle"></div>
+            <div class="spinnerImageWrap">
+                <img src="./img/logo.png" class="spinnyImage">
+            </div>
+        </div>
+        <div class="preload">
+            <!-- Champions -->
+            <img src="./img/champicons/Androxus.png">
+            <img src="./img/champicons/Barik.png">
+            <img src="./img/champicons/Bomb King.png">
+            <img src="./img/champicons/Buck.png">
+            <img src="./img/champicons/Cassie.png">
+            <img src="./img/champicons/Drogoz.png">
+            <img src="./img/champicons/Evie.png">
+            <img src="./img/champicons/Fernando.png">
+            <img src="./img/champicons/Grohk.png">
+            <img src="./img/champicons/Grover.png">
+            <img src="./img/champicons/Kinessa.png">
+            <img src="./img/champicons/Makoa.png">
+            <img src="./img/champicons/Mal'Damba.png">
+            <img src="./img/champicons/Pip.png">
+            <img src="./img/champicons/Ruckus.png">
+            <img src="./img/champicons/Sha Lin.png">
+            <img src="./img/champicons/Skye.png">
+            <img src="./img/champicons/Tyra.png">
+            <img src="./img/champicons/Viktor.png">
+            <img src="./img/champicons/Ying.png">
+            <!-- Items -->
+            <img src="./img/items/basicbow.png">
+            <img src="./img/items/viktorrifle.png">
+            <img src="./img/items/killtoheal.png">
+            <img src="./img/items/sniperrifle.png">
+            <img src="./img/items/salvo.png">
+            <img src="./img/items/defthands.png">
+            <img src="./img/items/aggression.png">
+            <img src="./img/items/booster.png">
+        </div>
+        <!--MODALS-->
+        <div id="creditsModal" class="modal fade pc-modal" role="dialog" data-backdrop="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fa fa-address-book" aria-hidden="true"></i> Credits</h4>
+                    </div>
+                    <div class="modal-body">
+<h3 style="margin-top: 0 !important; padding-top: 0 !important;">
+    Contributors
+</h3>
+<ul>
+    <li><a target="_blank" href="https://github.com/tchojnacki">T. Chojnacki</a></li>
+</ul>
+<hr>
+<h3>
+    Technologies Used
+</h3>
+<ul>
+    <li><a target="_blank" href="http://getbootstrap.com/">Bootstrap</a></li>
+    <li><a target="_blank" href="https://jquery.com/">jQuery</a></li>
+    <li><a target="_blank" href="http://sass-lang.com/">Sass</a></li>
+    <li><a target="_blank" href="http://iamceege.github.io/tooltipster/">Tooltipster</a></li>
+    <li><a target="_blank" href="http://manos.malihu.gr/jquery-custom-content-scroller/">Malihu Custom Scrollbar Plugin</a></li>
+    <li><a target="_blank" href="http://fontawesome.io/">Font Awesome</a></li>
+    <li><a target="_blank" href="http://babeljs.io/">Babel</a></li>
+    <li><a target="_blank" href="https://github.com/postcss/autoprefixer">Autoprefixer</a></li>
+    <li><a target="_blank" href="https://fonts.google.com/specimen/Lato">Lato Font by Łukasz Dziedzic</a></li>
+</ul>
+<hr>
+<h3>
+    Legal Info
+</h3>
+<p>Hi-Rez Studios, Inc. (“Hi-Rez”) hereby grants you a limited, personal, non-exclusive, non-transferable, and non-sublicensable license to use and display, for home, non-commercial, and personal use only, one copy of any material or artwork that you may download from the Site (as defined in the Online Terms of Service and Use Agreement applicable to all Hi-Rez games), including, without limitation, any audiovisual files incorporated in or generated by the software (collectively, the "Content"); provided, however, you must include or maintain all copyright and other proprietary notices contained in or associated with such Content. You acknowledge, understand, and agree that you may not sublicense, assign, or otherwise transfer this license or the Content and that no right, title, or interest in and to the Content has been or will be transferred to you from Hi-Rez or anyone else. You also agree that you will not alter, disassemble, decompile, reverse engineer, or otherwise modify the Content.</p>
+<p>Hi-Rez reserves the right, at its sole discretion, to revoke this limited use license at any time, for any reason or no reason. You may not use Hi-Rez materials on websites that feature defamatory, pornographic, or inflammatory content, including, without limitation, hacks and cheats for any of our games or any other content that Hi-Rez finds objectionable or unlawful.</p>
+<h4 style="font-weight: bold !important;">Paladins​&trade; and Paladins​&trade;: Champions of the Realm​​&trade; are trademarks of Hi­Rez Studios, Inc. in the United States and other countries.</h4>
+<ul>
+    <li><a target="_blank" href="https://www.hirezstudios.com/legal/">Legal FAQs</a></li>
+    <li><a target="_blank" href="https://www.hirezstudios.com/wp-content/themes/hi-rez-studios/pdf/legal-notices.pdf">Legal Notices</a></li>
+    <li><a target="_blank" href="https://hzweb.hi-rezgame.net/hirezstudios/wp-content/uploads/2016/05/paladins-end-user-license-agreement.pdf">Paladins EULA</a></li>
+</ul>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="pc-modal-button" data-dismiss="modal">CLOSE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="settingsModal" class="modal fade pc-modal" role="dialog" data-backdrop="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fa fa-cog" aria-hidden="true"></i> Settings</h4>
+                    </div>
+                    <div class="modal-body">
+<label for="explosionPiecesDisplay" class="full-width">Explosion pieces:</label>
+<input id="explosionPiecesInput" type="range" value="9" min="1" max="32" onchange="saveSettings();"/><input id="explosionPiecesDisplay" type="text" value="9" disabled="true">
+<hr>
+<input type="checkbox" id="easterEggsInput" class="input-checkbox" onchange="saveSettings();"><label for="easterEggsInput">Easter Eggs</label><br>
+<input type="checkbox" id="isMobileInput" class="input-checkbox" onchange="saveSettings();"><label for="isMobileInput">Mobile (reduces lag)</label>
+<hr>
+<label for="saveLocalStorage">Save progress (CTRL+S): </label><button type="button" name="saveLocalStorage" id="saveLocalStorage" class="pc-modal-button" onclick="saveLocalStorage();">SAVE</button>
+<br>
+<label for="deleteLocalStorage">Reset progress: </label><button type="button" name="deleteLocalStorage" id="deleteLocalStorage" class="pc-modal-button pc-button-decline" onclick="resetData();">RESET</button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="pc-modal-button" data-dismiss="modal" onclick="saveSettings();">CLOSE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="greetModal" class="modal fade pc-modal" role="dialog" data-backdrop="static">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Welcome to Paladins Clicker!</h4>
+                    </div>
+                    <div class="modal-body">
+<p>This game makes no profit and isn't licenced because most of the assets used in it are property of Hi-Rez Studios, Inc. Because of this, I made it open source. <a target="_blank" href="https://github.com/tchojnacki/paladinsclicker">Click here</a> to see source code, copy, and/or contribute.</p>
+<hr>
+<p>Hi-Rez Studios, Inc. (“Hi-Rez”) hereby grants you a limited, personal, non-exclusive, non-transferable, and non-sublicensable license to use and display, for home, non-commercial, and personal use only, one copy of any material or artwork that you may download from the Site (as defined in the Online Terms of Service and Use Agreement applicable to all Hi-Rez games), including, without limitation, any audiovisual files incorporated in or generated by the software (collectively, the "Content"); provided, however, you must include or maintain all copyright and other proprietary notices contained in or associated with such Content. You acknowledge, understand, and agree that you may not sublicense, assign, or otherwise transfer this license or the Content and that no right, title, or interest in and to the Content has been or will be transferred to you from Hi-Rez or anyone else. You also agree that you will not alter, disassemble, decompile, reverse engineer, or otherwise modify the Content. Hi-Rez reserves the right to shut down any fan product or service at any time for good reason, bad reason, or no reason at all.</p>
+<hr>
+<h4 style="font-weight: bold !important;">Paladins​&trade; and Paladins​&trade;: Champions of the Realm​​&trade; are trademarks of Hi­Rez Studios, Inc. in the United States and other countries.</h4>
+<ul>
+    <li><a target="_blank" href="https://www.hirezstudios.com/legal/">Legal FAQs</a></li>
+    <li><a target="_blank" href="https://www.hirezstudios.com/wp-content/themes/hi-rez-studios/pdf/legal-notices.pdf">Legal Notices</a></li>
+    <li><a target="_blank" href="https://hzweb.hi-rezgame.net/hirezstudios/wp-content/uploads/2016/05/paladins-end-user-license-agreement.pdf">Paladins EULA</a></li>
+</ul>
+<hr>
+<span id="localStorageDisplay"></span>
+<br><br>
+<p>Do you want to proceed?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="pc-modal-button" data-dismiss="modal">ACCEPT</button>
+                        <button type="button" class="pc-modal-button pc-button-decline" onclick='window.location="https://www.paladins.com/";'>DECLINE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="debugModal" class="modal fade pc-modal" role="dialog" data-backdrop="true">
+            <div class="modal-admin">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title"><i class="fa fa-wrench" aria-hidden="true"></i> Debug</h4>
+                    </div>
+                    <div class="modal-body">
+                        <pre id="debugPre" contenteditable="true" spellcheck="false"></pre>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="pc-modal-button" onclick="displayLocalStorage();">SHOW LOCAL STORAGE</button>
+                        <button type="button" class="pc-modal-button" onclick="displayHtml();">VIEW SOURCE</button>
+                        <button type="button" class="pc-modal-button" data-dismiss="modal">CLOSE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--MODALS END-->
+        <!--Preload, load etc. end-->
+        <nav class="pc-navbar">
+            <div class="pc-logo pc-navbar-element">
+                <img src="./img/logo.png" height="25px" class="pc-logo-img" draggable="false">
+                Paladins Clicker
+            </div>
+            <!--Icons on the right of navbar-->
+            <div class="pc-navbar-element" title="Credits" onclick="$('#creditsModal').modal('show');">
+                <i class="fa fa-address-book" aria-hidden="true"></i>
+            </div>
+            <div class="pc-navbar-element" title="Settings" onclick="$('#settingsModal').modal('show');">
+                <i class="fa fa-cog" aria-hidden="true"></i>
+            </div>
+        </nav>
+
+        <div class="pc-leftbar pc-bar">
+            <div class="floatingNumsWrapper">
+            </div>
+            <div class="champion-name">
+                Placeholder<!--This gets changed when js loads and before load screen hides-->
+            </div>
+            <div class="health-wrapper tooltipster" title="10/10">
+                <!--Empty div showing hp-->
+                <div class="health-progress"></div>
+            </div>
+            <!--Small indicator below hp bar-->
+            <div class="champion-triangle"></div>
+            <div class="champion-wrapper">
+                <img src="./img/placeholder.jpg" draggable="false" alt="?" class="champion-icon">
+            </div>
+        </div>
+        <div class="pc-midbar pc-bar">
+            <canvas width="260" height="260" id="lvlCanvas" class="level-canvas"></canvas>
+            <div class="level-text tooltipster" title="0/100">
+                1
+            </div>
+            <!--Stats-->
+            <div class="pc-stats">
+                <div class="stats-section">
+                    <img src="./img/gold.png" draggable="false" height="35" width="35"><span id="goldSpan">0</span>
+                    <span class="gpk"><span id="gpkSpan">3</span> <span class="stats-yellow">per kill</span></span>
+                </div>
+                <div class="stats-section">
+                    <img src="./img/dmg.png" draggable="false" height="35" width="35"><span id="damageSpan">1</span>
+                    <span class="dps"><span id="dpsSpan">0</span> <span class="stats-orange">per second</span></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="pc-rightbar pc-bar"><!--Items get generated here--></div>
+
+        <!--Load JS-->
+        <script type="text/javascript" src="./js/jquery.min.js"></script>
+        <script type="text/javascript" src="./js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="./js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./js/tooltipster.bundle.min.js"></script>
+        <script type="text/javascript" src="./js/customscrollbar.min.js"></script>
+        <script type="text/javascript" src="./js/main.min.js"></script>
+    </body>
+</html>
