@@ -2,35 +2,35 @@ import React, { Component } from 'react';
 import css from './ChampionDisplay.scss';
 
 class ChampionDisplay extends Component {
-  champions = [{ name: 'Androxus', role: 'Flank' },
-    { name: 'Ash', role: 'Front Line' },
-    { name: 'Barik', role: 'Front Line' },
-    { name: 'Bomb King', role: 'Damage' },
-    { name: 'Buck', role: 'Flank' },
-    { name: 'Cassie', role: 'Damage' },
-    { name: 'Drogoz', role: 'Damage' },
-    { name: 'Evie', role: 'Flank' },
-    { name: 'Fernando', role: 'Front Line' },
-    { name: 'Grohk', role: 'Support' },
-    { name: 'Grover', role: 'Support' },
-    { name: 'Inara', role: 'Front Line' },
-    { name: 'Kinessa', role: 'Damage' },
-    { name: 'Lex', role: 'Flank' },
-    { name: 'Lian', role: 'Damage' },
-    { name: 'Maeve', role: 'Flank' },
-    { name: 'Makoa', role: 'Front Line' },
-    { name: 'Mal\'Damba', role: 'Support' },
-    { name: 'Pip', role: 'Support' },
-    { name: 'Ruckus', role: 'Front Line' },
-    { name: 'Seris', role: 'Support' },
-    { name: 'Sha Lin', role: 'Damage' },
-    { name: 'Skye', role: 'Flank' },
-    { name: 'Torvald', role: 'Front Line' },
-    { name: 'Tyra', role: 'Damage' },
-    { name: 'Viktor', role: 'Damage' },
-    { name: 'Willo', role: 'Damage' },
-    { name: 'Ying', role: 'Support' },
-    { name: 'Zhin', role: 'Flank' }];
+  champions = [{ name: 'Androxus', role: 'Flanco' },
+    { name: 'Ash', role: 'Tanque' },
+    { name: 'Barik', role: 'Tanque' },
+    { name: 'Bomb King', role: 'Dano' },
+    { name: 'Buck', role: 'Flanco' },
+    { name: 'Cassie', role: 'Dano' },
+    { name: 'Drogoz', role: 'Dano' },
+    { name: 'Evie', role: 'Flanco' },
+    { name: 'Fernando', role: 'Tanque' },
+    { name: 'Grohk', role: 'Suporte' },
+    { name: 'Grover', role: 'Suporte' },
+    { name: 'Inara', role: 'Tanque' },
+    { name: 'Kinessa', role: 'Dano' },
+    { name: 'Lex', role: 'Flanco' },
+    { name: 'Lian', role: 'Dano' },
+    { name: 'Maeve', role: 'Flanco' },
+    { name: 'Makoa', role: 'Tanque' },
+    { name: 'Mal\'Damba', role: 'Suporte' },
+    { name: 'Pip', role: 'Suporte' },
+    { name: 'Ruckus', role: 'Tanque' },
+    { name: 'Seris', role: 'Suporte' },
+    { name: 'Sha Lin', role: 'Dano' },
+    { name: 'Skye', role: 'Flanco' },
+    { name: 'Torvald', role: 'Tanque' },
+    { name: 'Tyra', role: 'Dano' },
+    { name: 'Viktor', role: 'Dano' },
+    { name: 'Willo', role: 'Dano' },
+    { name: 'Ying', role: 'Suporte' },
+    { name: 'Zhin', role: 'Flanco' }];
 
   constructor(props) {
     super(props);
@@ -59,13 +59,13 @@ class ChampionDisplay extends Component {
 
   getMulti(role) {
     switch (role) {
-      case 'Front Line':
+      case 'Tanque':
         return 2;
-      case 'Support':
+      case 'Suporte':
         return 1.5;
-      case 'Damage':
+      case 'Dano':
         return 1.5;
-      case 'Flank':
+      case 'Flanco':
         return 1;
       default:
         return 1;
